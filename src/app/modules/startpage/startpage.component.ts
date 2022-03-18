@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartpageComponent implements OnInit {
 
+    public barbers = [{name: 'Tugay', link: ''}, {name: 'Berkan', link: ''}];
+
+    /*
+      1. /shared/module barber
+      2. exportieren
+      4. ngFor Barbers
+      3. <tgy-barber [name]=barber.name> <-- name 
+      4. in barber:componente => @input name:"", link:""
+    */
+
   constructor() { }
 
   ngOnInit() {
