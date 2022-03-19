@@ -1,5 +1,8 @@
 <tgy-header></tgy-header>
 
-<section id="barber">
-    <!--tgy-barber-->
+<section id="barber" class="flex flex-col items-center mt-14" >
+    <div *ngFor="let barber of barbers"><tgy-barber [name]=barber.name [imgUrl]=barber.imgUrl ></tgy-barber>
+    </div>
+    
+    
 </section>

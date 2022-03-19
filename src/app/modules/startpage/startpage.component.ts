@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartpageComponent implements OnInit {
 
-    public barbers = [{name: 'Tugay', link: ''}, {name: 'Berkan', link: ''}];
+    public barbers = [{name: 'Tugay', imgUrl: '../assets/images/tugay.png' ,link: ''},  {name: 'Berkan', imgUrl: '../assets/images/berkan.png' , link: ''}];
 
     /*
       1. /shared/module barber
