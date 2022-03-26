@@ -1,25 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import {
+    serviceData,
+    serviceStructure,
+    TgyService,
+    TgyServiceCategory,
+    TgyServiceStructure
+} from "src/app/shared/models/service.definition";
 
 @Component({
-  selector: 'tgy-startpage',
-  templateUrl: './startpage.component.html',
-  styleUrls: ['./startpage.component.scss']
+    selector: "tgy-startpage",
+    templateUrl: "./startpage.component.html",
+    styleUrls: ["./startpage.component.scss"]
 })
 export class StartpageComponent implements OnInit {
+    public barbers = [
+        { name: "Tugay", imgUrl: "../assets/images/tugay.png", link: "" },
+        { name: "Berkan", imgUrl: "../assets/images/berkan.png", link: "" }
+    ];
+    public services: TgyService[] = serviceData;
+    public serviceCategories = serviceStructure;
+    constructor() {}
 
-    public barbers = [{name: 'Tugay', imgUrl: '../assets/images/tugay.png' ,link: ''},  {name: 'Berkan', imgUrl: '../assets/images/berkan.png' , link: ''}];
-
-    /*
-      1. /shared/module barber
-      2. exportieren
-      4. ngFor Barbers
-      3. <tgy-barber [name]=barber.name> <-- name 
-      4. in barber:componente => @input name:"", link:""
-    */
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+    ngOnInit() {}
 }

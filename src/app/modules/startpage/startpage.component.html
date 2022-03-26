@@ -1,8 +1,34 @@
 <tgy-header></tgy-header>
 
-<section id="barber" class="flex flex-col items-center mt-14" >
-    <div *ngFor="let barber of barbers"><tgy-barber [name]=barber.name [imgUrl]=barber.imgUrl ></tgy-barber>
+<section id="barber" class="flex flex-col items-center mt-14">
+    <div *ngFor="let barber of barbers">
+        <tgy-barber [name]="barber.name" [imgUrl]="barber.imgUrl"></tgy-barber>
     </div>
-    
-    
+</section>
+
+<section
+    id="preise"
+    class="flex flex-col lg:flex-row mt-14 mx-auto lg:-mx-10 justify-center items-center lg:items-start"
+>
+    <div class="mx-10 w-80" *ngFor="let cat of serviceCategories">
+        <div class="flex items-center h-32">
+            <img
+                class="w-10 mr-5"
+                src="../../../assets/icons/{{ cat.category }}.png"
+                alt=""
+            />
+            <h3 class="text-2xl uppercase tracking-wide">
+                {{ cat.name }}
+            </h3>
+        </div>
+        <div
+            class="py-4 border-b"
+            *ngFor="let service of services"
+            [ngClass]="{ hidden: cat.category !== service.category }"
+        >
+            <ng-container *ngIf="cat.category === service.category">
+                <tgy-service [serviceItem]="service"></tgy-service>
+            </ng-container>
+        </div>
+    </div>
 </section>
