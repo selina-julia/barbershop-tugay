@@ -1,0 +1,11 @@
+<div class="flex items-center">
+    <div class="flex-grow">
+        <h4 class="font-bold">{{ serviceItem?.title }}</h4>
+        <p class="pt-3" *ngIf="serviceItem?.description">
+            {{ serviceItem?.description }}
+        </p>
+    </div>
+    <div class="text-3xl font-extralight pl-10 my-auto">
+        {{ serviceItem?.price }}
+    </div>
+</div>
